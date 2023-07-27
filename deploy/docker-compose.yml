@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  exc1:
+    build:
+      context: ../
+      dockerfile: build/go1/Dockerfile
+    image: 'exc_go1'
+    container_name: 'exc1'
+  exc2:
+    build:
+      context: ../
+      dockerfile: build/go1/Dockerfile
+    image: 'exc_go1'
+    container_name: 'exc2'
+  exc3:
+    image: 'exc_go2'
+    container_name: 'exc3'
+    command: /app/httpd
+    ports:
+      - '18010:8080'
+    environment:
+      HTTPD_PORT: 8080
+  exc4:
+    image: 'exc_go2'
+    container_name: 'exc4'
+    command: /app/httpd
+    ports:
+      - '18020:8080'
+    environment:
+      HTTPD_PORT: 8080
+  exc5:
+    image: 'exc_go2'
+    container_name: 'exc5'
+    command: /app/httpd
+    ports:
+      - '18030:8081'
+    environment:
+      HTTPD_PORT: 8081
