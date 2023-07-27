@@ -52,7 +52,7 @@ docker ps | grep exc
 docker create --name exc_go1a -t -i exc_go1
 #コンテナ開始
 docker start -a -i exc_go1a
-#コンテナ保存
+#コンテナイメージ保存
 docker save exc_go1 > ./images/exc_go1.tar
 #ファイルサイズ確認
 ls -lh images/
